@@ -1,0 +1,1 @@
+{{ $res->pemesan->nama }}
