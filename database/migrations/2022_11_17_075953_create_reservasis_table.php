@@ -14,8 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('reservasis', function (Blueprint $table) {
-            $table->increments('id');
-            $table->foreignId('pemesan_id');
+            $table->id()->unsigned();
+            $table->foreignId('pemesan_id')->constrained('pemesan');
+            $table->foreignId('terminal_id')->constrained('terminals');
+            $table->foreignId('bus_id')->constrained('bus');
             $table->date('tgl_pesan');
             $table->date('tgl_berangkat');
             $table->time('jam_berangkat');

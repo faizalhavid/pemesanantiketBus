@@ -8,7 +8,7 @@
         <div class="navbar-collapse collapse" id="navbar10">
             <ul class="navbar-nav nav-fill w-100">
                 <li class="nav-item">
-                    <a class="nav-link {{ ($title == "Home") ? 'active' : '' }}" href="/">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link {{ ($title == "Dashboard admin") ? 'active' : '' }}" href="/dashboard">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ ($title == "Data Pemesan" || $title == "Tambah Data Pemesan") ? 'active' : '' }}" href="/pemesan">Pemesan</a>

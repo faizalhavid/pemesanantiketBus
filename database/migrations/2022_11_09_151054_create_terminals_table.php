@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('terminals', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id()->unsigned();
             $table->string('nama_terminal');
             $table->string('alamat_terminal');
             $table->string('email_terminal');

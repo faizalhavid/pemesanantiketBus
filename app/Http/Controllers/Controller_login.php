@@ -15,7 +15,7 @@ class Controller_login extends Controller
     }
     public function proses_login(Request $request){
         if(Auth::attempt($request->only('email','password'))){
-            return redirect(('/'));
+            return redirect(('/dashboard'));
         }
         return redirect('login');
     }

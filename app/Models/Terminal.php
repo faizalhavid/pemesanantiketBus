@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Reservasi;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Terminal extends Model
 {
@@ -12,7 +13,8 @@ class Terminal extends Model
     protected $table='terminals';
     protected $guarded=['id'];
 
-    // public function reservasi(){
-    //     return $this->hasOne(Reservasi::class);
-    // }
+    public function reservasi(){
+        $this->hasMany(Reservasi::class);
+    }
+
 }

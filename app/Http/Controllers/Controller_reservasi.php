@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Reservasi;
 use App\Http\Requests\StoreReservasiRequest;
 use App\Http\Requests\UpdateReservasiRequest;
+use App\Models\Bus;
+
+use function PHPUnit\Framework\countOf;
 
 class Controller_reservasi extends Controller
 {
@@ -15,9 +18,14 @@ class Controller_reservasi extends Controller
      */
     public function index()
     {
-        $data=Reservasi::first();
-        // $data2=Reservasi::find(1)->pemesan;
-        return view('reservasi/reservasi',compact());
+        $data=Reservasi::all();
+        return view('dashboard',compact('data','bus'),['title'=>'Dashboard']);
+    }
+
+    public function tambah_reservasi(){
+        $data=Reservasi::all();
+        $bus=Bus::all();
+        return view ('reservasi/tambah_reservasi',compact('data','bus'), ["title"=>"Tambah Data Reservasi"]);
     }
 
     /**

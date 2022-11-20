@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->string('alamat');
-            $table->bigInteger('no_tlp');
+            $table->string('no_tlp');
             $table->bigInteger('jumlah_tiket');
         });
     }

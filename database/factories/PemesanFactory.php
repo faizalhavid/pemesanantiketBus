@@ -17,7 +17,10 @@ class PemesanFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'nama' => fake()->name(),
+            'alamat' => fake()->address(),
+            'no_tlp' => fake()->phoneNumber(),
+            'jumlah_tiket' => fake()->randomNumber(),
         ];
     }
 }

@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller_login;
 use App\Http\Controllers\Controller_pemesan;
 use App\Http\Controllers\Controller_reservasi;
 use App\Http\Controllers\Controller_terminal;
+use App\Http\Controllers\Controller_user;
 use Symfony\Component\HttpKernel\Controller\ControllerResolver;
 
 /*
@@ -20,9 +21,8 @@ use Symfony\Component\HttpKernel\Controller\ControllerResolver;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome',["title"=>"Home"]);
-})->middleware('auth');
+Route::get('/dashboard',[Controller_reservasi::class,'index'])->middleware('auth');
+
 
 // Terminal
 Route::get('/terminal',[Controller_terminal::class, 'index'])->name('terminal');
@@ -58,4 +58,11 @@ Route::get('/edit_pemesan/{id}', [Controller_pemesan::class, 'edit_pemesan']);
 Route::post('/update_pemesan/{id}', [Controller_pemesan::class, 'update_pemesan']);
 
 // Reservasi
-Route::get('/reservasi',[Controller_reservasi::class,'index'])->name('reservasi');
+Route::get('/tambah_reservasi', [Controller_reservasi::class, 'tambah_reservasi']);
+
+
+// User view
+Route::get('/',[Controller_user::class,'index'])->name('busfast');
+Route::post('/insertUserpemesan',[Controller_user::class,'insertUserpemesan']);
+Route::get('/reservasi',[Controller_user::class,'reservasipage'])->name('reservasipage');
+

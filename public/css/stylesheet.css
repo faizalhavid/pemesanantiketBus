@@ -1,7 +1,10 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'poppins';
 }
 
 body{
@@ -9,7 +12,7 @@ body{
 }
 
 .card-top{
-    margin-top: 120px;
+    margin-top: 50px;
 }
 
 .card{
@@ -19,4 +22,17 @@ body{
 
 .sub-title{
     margin:  25px 0;
+}
+
+.logo-brand{
+    height: 45px;
+}
+.logo-brand:hover{
+    transform: scale(1.05,1.05);
+    transition: 0.5s;
+}
+.banner{
+    background: url(../image/banner.jpg);
+    background-size: cover;
+    min-height: 800px;
 }

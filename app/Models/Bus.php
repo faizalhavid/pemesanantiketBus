@@ -14,4 +14,10 @@ class Bus extends Model
     // protected $fillable = [];
 
     protected $guarded =['id'];
+    public function reservasi(){
+        $this->hasMany(Reservasi::class);
+    }
+    public function kategori(){
+        $this->belongsTo(Kategori::class);
+    }
 }
